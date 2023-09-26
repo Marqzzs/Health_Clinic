@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "L5fCIe6o2haLxdoLb2FwKZjSqXKSmRhASaqetOryPYA=",
+  "Source": "webapi.healthclinic.manha",
+  "BasePath": "_content/webapi.healthclinic.manha",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
