@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.healthclinic.manha</name>
+    </assembly>
+    <members>
+        <member name="M:webapi.healthclinic.manha.Controllers.LoginController.Login(webapi.healthclinic.manha.ViewModel.LoginViewModel)">
+            <summary>
+            Realiza a autenticação de um usuário e gera um token JWT válido.
+            </summary>
+            <param name="usuario">Os dados de login do usuário.</param>
+            <returns>Um objeto JSON contendo o token JWT.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.Post(webapi.healthclinic.manha.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário.
+            </summary>
+            <param name="tipoUsuario">Os dados do tipo de usuário a ser cadastrado.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.Get">
+            <summary>
+            Retorna todos os tipos de usuário cadastrados.
+            </summary>
+            <returns>Uma lista de tipos de usuário.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.GetById(System.Guid)">
+            <summary>
+            Retorna um tipo de usuário específico com base no ID.
+            </summary>
+            <param name="id">O ID do tipo de usuário a ser buscado.</param>
+            <returns>O tipo de usuário encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.Put(System.Guid,webapi.healthclinic.manha.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um tipo de usuário existente.
+            </summary>
+            <param name="id">O ID do tipo de usuário a ser atualizado.</param>
+            <param name="tipoUsuario">Os novos dados do tipo de usuário.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.Delete(System.Guid)">
+            <summary>
+            Exclui um tipo de usuário existente.
+            </summary>
+            <param name="id">O ID do tipo de usuário a ser excluído.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.UsuarioController.Post(webapi.healthclinic.manha.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário.
+            </summary>
+            <param name="usuario">Os dados do novo usuário a serem cadastrados.</param>
+            <returns>Um código de status 201 (Created) se o usuário foi cadastrado com sucesso.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.UsuarioController.GetById(System.Guid)">
+            <summary>
+            Obtém um usuário pelo seu ID.
+            </summary>
+            <param name="id">O ID do usuário a ser buscado.</param>
+            <returns>Os dados do usuário encontrado ou um código de status 400 (Bad Request) se não encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.UsuarioController.Get(System.String,System.String)">
+            <summary>
+            Obtém um usuário pelo email e senha.
+            </summary>
+            <param name="email">O email do usuário.</param>
+            <param name="senha">A senha do usuário.</param>
+            <returns>Os dados do usuário encontrado ou um código de status 400 (Bad Request) se não encontrado.</returns>
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V1">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V2">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um tipo de usuário no banco de dados.
+            </summary>
+            <param name="id">O ID do tipo de usuário a ser atualizado.</param>
+            <param name="tipoUsuario">Os novos dados do tipo de usuário.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca um tipo de usuário pelo seu ID.
+            </summary>
+            <param name="id">O ID do tipo de usuário a ser buscado.</param>
+            <returns>O tipo de usuário encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.Cadastrar(webapi.healthclinic.manha.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário no banco de dados.
+            </summary>
+            <param name="tipoUsuario">Os dados do novo tipo de usuário.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.Deletar(System.Guid)">
+            <summary>
+            Exclui um tipo de usuário do banco de dados pelo seu ID.
+            </summary>
+            <param name="id">O ID do tipo de usuário a ser excluído.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.ListarTodos">
+            <summary>
+            Lista todos os tipos de usuário cadastrados no banco de dados.
+            </summary>
+            <returns>Uma lista de tipos de usuário.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.UsuarioRepository.BuscarPorEmailESenha(System.String,System.String)">
+            <summary>
+            Busca um usuário pelo email e senha.
+            </summary>
+            <param name="email">O email do usuário.</param>
+            <param name="senha">A senha do usuário.</param>
+            <returns>O usuário encontrado ou null se não encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.UsuarioRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca um usuário pelo seu ID.
+            </summary>
+            <param name="id">O ID do usuário a ser buscado.</param>
+            <returns>O usuário encontrado ou null se não encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.UsuarioRepository.Cadastrar(webapi.healthclinic.manha.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário no banco de dados.
+            </summary>
+            <param name="usuario">Os dados do novo usuário.</param>
+        </member>
+    </members>
+</doc>

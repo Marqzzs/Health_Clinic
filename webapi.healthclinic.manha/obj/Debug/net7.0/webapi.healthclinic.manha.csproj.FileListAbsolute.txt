@@ -80,3 +80,5 @@ C:\Users\55358961879\Desktop\senai_backend_2semestrre\Health_Clinic\webapi.healt
 C:\Users\55358961879\Desktop\senai_backend_2semestrre\Health_Clinic\webapi.healthclinic.manha\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\55358961879\Desktop\senai_backend_2semestrre\Health_Clinic\webapi.healthclinic.manha\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\55358961879\Desktop\senai_backend_2semestrre\Health_Clinic\webapi.healthclinic.manha\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\55358961879\Desktop\senai_backend_2semestrre\Health_Clinic\webapi.healthclinic.manha\bin\Debug\net7.0\webapi.healthclinic.manha.xml
+C:\Users\55358961879\Desktop\senai_backend_2semestrre\Health_Clinic\webapi.healthclinic.manha\obj\Debug\net7.0\webapi.healthclinic.manha.xml
