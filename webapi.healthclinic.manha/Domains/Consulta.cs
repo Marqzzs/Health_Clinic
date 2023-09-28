@@ -15,6 +15,8 @@ namespace webapi.healthclinic.manha.Domains
 
         [Column(TypeName ="DATE")]
         [Required(ErrorMessage ="Data da consulta e obrigatoria")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? DataConsulta { get; set; }
 
         //referencia a tabela medico

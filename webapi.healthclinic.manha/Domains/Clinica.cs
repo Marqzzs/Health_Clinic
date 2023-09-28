@@ -30,10 +30,14 @@ namespace webapi.healthclinic.manha.Domains
 
         [Column(TypeName = "TIME")] // Use TIME para apenas a hora
         [Required(ErrorMessage = "Horário de abertura obrigatório!")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
         public TimeSpan? HorarioAbertura { get; set; }
 
         [Column(TypeName = "TIME")] // Use TIME para apenas a hora
         [Required(ErrorMessage = "Horário de fechamento obrigatório!")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
         public TimeSpan? HorarioFechamento { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace webapi.healthclinic.manha.Repositories
 
         public void Cadastrar(Clinica clinica)
         {
+
             clinica.IdClinica = Guid.NewGuid();
 
             ctx.Clinica!.Add(clinica);

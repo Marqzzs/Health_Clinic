@@ -4,6 +4,41 @@
         <name>webapi.healthclinic.manha</name>
     </assembly>
     <members>
+        <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.Post(webapi.healthclinic.manha.Domains.Especialidade)">
+            <summary>
+            Cadastra uma nova especialidade.
+            </summary>
+            <param name="especialidade">Os dados da especialidade a ser cadastrada.</param>
+            <returns>Um código de status 201 (Created) se a especialidade for cadastrada com sucesso, ou 400 (Bad Request) em caso de erro.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.Get">
+            <summary>
+            Lista todas as especialidades.
+            </summary>
+            <returns>Os dados de todas as especialidades no formato JSON.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.GetById(System.Guid)">
+            <summary>
+            Busca uma especialidade por ID.
+            </summary>
+            <param name="id">O ID da especialidade a ser buscada.</param>
+            <returns>Os dados da especialidade no formato JSON, ou 400 (Bad Request) em caso de erro.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.Delete(System.Guid)">
+            <summary>
+            Exclui uma especialidade por ID.
+            </summary>
+            <param name="id">O ID da especialidade a ser excluída.</param>
+            <returns>Um status 404 (Not Found) se a especialidade não for encontrada, ou 400 (Bad Request) em caso de erro.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.Put(System.Guid,webapi.healthclinic.manha.Domains.Especialidade)">
+            <summary>
+            Atualiza uma especialidade por ID.
+            </summary>
+            <param name="id">O ID da especialidade a ser atualizada.</param>
+            <param name="especialidade">Os novos dados da especialidade.</param>
+            <returns>Um status 200 (OK) se a especialidade for atualizada com sucesso, ou 400 (Bad Request) em caso de erro.</returns>
+        </member>
         <member name="M:webapi.healthclinic.manha.Controllers.LoginController.Login(webapi.healthclinic.manha.ViewModel.LoginViewModel)">
             <summary>
             Realiza a autenticação de um usuário e gera um token JWT válido.
@@ -91,6 +126,98 @@
         </member>
         <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V3">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V4">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V5">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V5.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V5.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V5.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V6">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V6.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V6.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V6.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V7">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V7.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V7.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V7.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Especialidade)">
+            <summary>
+            Atualiza uma especialidade pelo seu ID.
+            </summary>
+            <param name="id">O ID da especialidade a ser atualizada.</param>
+            <param name="especialidade">Os novos dados da especialidade.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca uma especialidade pelo seu ID.
+            </summary>
+            <param name="id">O ID da especialidade a ser buscada.</param>
+            <returns>Os dados da especialidade encontrada.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.Cadastrar(webapi.healthclinic.manha.Domains.Especialidade)">
+            <summary>
+            Cadastra uma nova especialidade.
+            </summary>
+            <param name="especialidade">Os dados da especialidade a ser cadastrada.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta uma especialidade pelo seu ID.
+            </summary>
+            <param name="id">O ID da especialidade a ser deletada.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.ListarTodos">
+            <summary>
+            Lista todas as especialidades cadastradas.
+            </summary>
+            <returns>Uma lista de todas as especialidades no banco de dados.</returns>
         </member>
         <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.TipoUsuario)">
             <summary>

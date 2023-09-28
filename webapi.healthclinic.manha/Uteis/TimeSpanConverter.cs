@@ -1,21 +1,19 @@
-﻿namespace webapi.healthclinic.manha.Uteis
-{   
-    public static class TimeSpanConverter
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace webapi.healthclinic.manha.Uteis
+{
+    public class TimeSpanConverter : JsonConverter<TimeSpan>
     {
-        public static string TimeSpanToString(TimeSpan timeSpan)
+        public override TimeSpan Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return timeSpan.ToString("hh\\:mm");
+            string? value = reader.GetString();
+            return TimeSpan.Parse(value!);
         }
 
-        public static TimeSpan StringToTimeSpan(string timeString)
+        public override void Write(Utf8JsonWriter writer, TimeSpan value, JsonSerializerOptions options)
         {
-            TimeSpan timeSpan;
-            if (TimeSpan.TryParseExact(timeString, "hh\\:mm", null, out timeSpan))
-            {
-                return timeSpan;
-            }
-            throw new ArgumentException("O formato da hora é inválido. Use o formato HH:mm.");
+            writer.WriteStringValue(value.ToString(@"hh\:mm"));
         }
     }
-
 }

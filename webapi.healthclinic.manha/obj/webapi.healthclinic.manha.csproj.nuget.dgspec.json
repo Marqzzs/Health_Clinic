@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\55358961879\\Desktop\\senai_backend_2semestrre\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj": {}
+    "C:\\Users\\55358961879\\Desktop\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\55358961879\\Desktop\\senai_backend_2semestrre\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj": {
+    "C:\\Users\\55358961879\\Desktop\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\55358961879\\Desktop\\senai_backend_2semestrre\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj",
+        "projectUniqueName": "C:\\Users\\55358961879\\Desktop\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj",
         "projectName": "webapi.healthclinic.manha",
-        "projectPath": "C:\\Users\\55358961879\\Desktop\\senai_backend_2semestrre\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj",
+        "projectPath": "C:\\Users\\55358961879\\Desktop\\Health_Clinic\\webapi.healthclinic.manha\\webapi.healthclinic.manha.csproj",
         "packagesPath": "C:\\Users\\55358961879\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\55358961879\\Desktop\\senai_backend_2semestrre\\Health_Clinic\\webapi.healthclinic.manha\\obj\\",
+        "outputPath": "C:\\Users\\55358961879\\Desktop\\Health_Clinic\\webapi.healthclinic.manha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\55358961879\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "ErikEJ.EntityFrameworkCore.SqlServer.DateOnlyTimeOnly": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

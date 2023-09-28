@@ -11,6 +11,10 @@ namespace webapi.healthclinic.manha.Domains
         [Key]
         public Guid IdPaciente { get; set; }
 
+        [Column(TypeName = "VARCHAR(100)")]
+        [Required(ErrorMessage = "Nome do paciente e obrigatorio")]
+        public string? Nome { get; set; }
+
         [Column(TypeName ="VARCHAR(11)")]
         [Required(ErrorMessage ="Informe o cpf do paciente")]
         public string? CPF { get; set; }
@@ -21,6 +25,8 @@ namespace webapi.healthclinic.manha.Domains
 
         [Column(TypeName ="DATE")]
         [Required(ErrorMessage ="Informe a data de nascimento do paciente")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataNascimento { get; set; }
 
         //referencia a tabela usuario
