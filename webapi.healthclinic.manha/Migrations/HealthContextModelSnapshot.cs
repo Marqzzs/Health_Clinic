@@ -32,21 +32,21 @@ namespace webapi.healthclinic.manha.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(14)");
 
+                    b.Property<TimeSpan?>("ClosingTime")
+                        .IsRequired()
+                        .HasColumnType("TIME");
+
                     b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<TimeSpan?>("HorarioAbertura")
-                        .IsRequired()
-                        .HasColumnType("TIME");
-
-                    b.Property<TimeSpan?>("HorarioFechamento")
-                        .IsRequired()
-                        .HasColumnType("TIME");
-
                     b.Property<string>("NomeFantasia")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
+
+                    b.Property<TimeSpan?>("OpeningTime")
+                        .IsRequired()
+                        .HasColumnType("TIME");
 
                     b.Property<string>("RazaoSocial")
                         .IsRequired()

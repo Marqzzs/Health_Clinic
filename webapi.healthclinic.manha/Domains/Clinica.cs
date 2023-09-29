@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace webapi.healthclinic.manha.Domains
 {
@@ -28,16 +29,16 @@ namespace webapi.healthclinic.manha.Domains
         [Required(ErrorMessage = "Endereço obrigatório!")]
         public string? Endereco { get; set; }
 
-        [Column(TypeName = "TIME")] // Use TIME para apenas a hora
-        [Required(ErrorMessage = "Horário de abertura obrigatório!")]
+        [Required(ErrorMessage = "The 'OpeningTime' field is required.")]
+        [Column(TypeName = "TIME")]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
-        public TimeSpan? HorarioAbertura { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm:ss")]
+        public TimeSpan? OpeningTime { get; set; }
 
-        [Column(TypeName = "TIME")] // Use TIME para apenas a hora
-        [Required(ErrorMessage = "Horário de fechamento obrigatório!")]
+        [Required(ErrorMessage = "The 'ClosingTime' field is required.")]
+        [Column(TypeName = "TIME")]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
-        public TimeSpan? HorarioFechamento { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm:ss")]
+        public TimeSpan? ClosingTime { get; set; }
     }
 }

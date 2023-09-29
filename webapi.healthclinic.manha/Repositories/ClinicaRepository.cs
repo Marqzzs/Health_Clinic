@@ -21,7 +21,7 @@ namespace webapi.healthclinic.manha.Repositories
 
         public Clinica BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return ctx.Clinica.FirstOrDefault(c => c.IdClinica == id)!;
         }
 
         public void Cadastrar(Clinica clinica)
@@ -36,7 +36,12 @@ namespace webapi.healthclinic.manha.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Clinica clinicaBuscada = ctx.Clinica.Find(id)!;
+
+            if (clinicaBuscada != null)
+            {
+                ctx.Clinica.Remove(clinicaBuscada);
+            }
         }
 
         public List<Clinica> ListarTodos()

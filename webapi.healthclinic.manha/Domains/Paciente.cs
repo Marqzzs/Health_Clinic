@@ -23,10 +23,10 @@ namespace webapi.healthclinic.manha.Domains
         [Required(ErrorMessage ="Informe o telefone do paciente")]
         public string? Telefone { get; set; }
 
-        [Column(TypeName ="DATE")]
-        [Required(ErrorMessage ="Informe a data de nascimento do paciente")]
+        [Column(TypeName = "DATE")]
+        [Required(ErrorMessage = "Informe a data de nascimento do paciente")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento { get; set; }
 
         //referencia a tabela usuario

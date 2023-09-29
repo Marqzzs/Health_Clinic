@@ -20,8 +20,8 @@ namespace webapi.healthclinic.manha.Migrations
                     NomeFantasia = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     CNPJ = table.Column<string>(type: "VARCHAR(14)", nullable: false),
                     Endereco = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    HorarioAbertura = table.Column<DateTime>(type: "DATE", nullable: false),
-                    HorarioFechamento = table.Column<DateTime>(type: "DATE", nullable: false)
+                    OpeningTime = table.Column<TimeSpan>(type: "TIME", nullable: false),
+                    ClosingTime = table.Column<TimeSpan>(type: "TIME", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -70,7 +70,7 @@ namespace webapi.healthclinic.manha.Migrations
                         column: x => x.IdTipo,
                         principalTable: "TipoUsuario",
                         principalColumn: "IdTipoUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,19 +91,19 @@ namespace webapi.healthclinic.manha.Migrations
                         column: x => x.IdClinica,
                         principalTable: "Clinica",
                         principalColumn: "IdClinica",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Medico_Especialidade_IdEspecialidade",
                         column: x => x.IdEspecialidade,
                         principalTable: "Especialidade",
                         principalColumn: "IdEspecialidade",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Medico_Usuario_IdUsuario",
                         column: x => x.IdUsuario,
                         principalTable: "Usuario",
                         principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,6 +111,7 @@ namespace webapi.healthclinic.manha.Migrations
                 columns: table => new
                 {
                     IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Nome = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     CPF = table.Column<string>(type: "VARCHAR(11)", nullable: false),
                     Telefone = table.Column<string>(type: "VARCHAR(11)", nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
@@ -124,7 +125,7 @@ namespace webapi.healthclinic.manha.Migrations
                         column: x => x.IdUsuario,
                         principalTable: "Usuario",
                         principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -172,13 +173,13 @@ namespace webapi.healthclinic.manha.Migrations
                         column: x => x.IdConsulta,
                         principalTable: "Consulta",
                         principalColumn: "IdConsulta",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Comentario_Paciente_IdPaciente",
                         column: x => x.IdPaciente,
                         principalTable: "Paciente",
                         principalColumn: "IdPaciente",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -198,13 +199,13 @@ namespace webapi.healthclinic.manha.Migrations
                         column: x => x.IdConsulta,
                         principalTable: "Consulta",
                         principalColumn: "IdConsulta",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_PresencaConsulta_Paciente_IdPaciente",
                         column: x => x.IdPaciente,
                         principalTable: "Paciente",
                         principalColumn: "IdPaciente",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(

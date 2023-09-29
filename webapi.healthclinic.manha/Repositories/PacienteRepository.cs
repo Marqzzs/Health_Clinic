@@ -1,33 +1,60 @@
 ﻿using webapi.healthclinic.manha.Domains;
+using webapi.healthclinic.manha.HealtClinicContext;
 using webapi.healthclinic.manha.Interfaces;
 
 namespace webapi.healthclinic.manha.Repositories
 {
     public class PacienteRepository : IPaciente
     {
+        private readonly HealthContext ctx;
+
+        public PacienteRepository()
+        {
+            ctx = new HealthContext();
+        }
+
         public void Atualizar(Guid id, Paciente paciente)
         {
-            throw new NotImplementedException();
+            Paciente pacienteBuscado = ctx.Paciente!.Find(id)!;
+
+            if (pacienteBuscado != null)
+            {
+                pacienteBuscado.Nome = paciente.Nome;
+                pacienteBuscado.Telefone = paciente.Telefone;
+                pacienteBuscado.DataNascimento = paciente.DataNascimento;
+            }
+
+            ctx.Paciente.Update(pacienteBuscado);
+
+            ctx.SaveChanges();
         }
 
         public Paciente BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return ctx.Paciente!.FirstOrDefault(p => p.IdPaciente == id)!;
         }
 
         public void Cadastrar(Paciente paciente)
         {
-            throw new NotImplementedException();
+            paciente.IdPaciente = Guid.NewGuid();
+
+            ctx.Paciente!.Add(paciente);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Paciente pacienteBuscado = ctx.Paciente!.Find(id)!;
+
+            ctx.Paciente.Remove(pacienteBuscado);
+
+            ctx.SaveChanges();
         }
 
         public List<Paciente> ListarTodos()
         {
-            throw new NotImplementedException();
+            return ctx.Paciente!.ToList();
         }
     }
 }

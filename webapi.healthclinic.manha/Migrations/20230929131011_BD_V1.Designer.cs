@@ -12,8 +12,8 @@ using webapi.healthclinic.manha.HealtClinicContext;
 namespace webapi.healthclinic.manha.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20230928132003_BD_V5")]
-    partial class BD_V5
+    [Migration("20230929131011_BD_V1")]
+    partial class BD_V1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,21 +35,21 @@ namespace webapi.healthclinic.manha.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(14)");
 
+                    b.Property<TimeSpan?>("ClosingTime")
+                        .IsRequired()
+                        .HasColumnType("TIME");
+
                     b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<TimeSpan?>("HorarioAbertura")
-                        .IsRequired()
-                        .HasColumnType("TIME");
-
-                    b.Property<TimeSpan?>("HorarioFechamento")
-                        .IsRequired()
-                        .HasColumnType("TIME");
-
                     b.Property<string>("NomeFantasia")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
+
+                    b.Property<TimeSpan?>("OpeningTime")
+                        .IsRequired()
+                        .HasColumnType("TIME");
 
                     b.Property<string>("RazaoSocial")
                         .IsRequired()

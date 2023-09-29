@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using webapi.healthclinic.manha.Domains;
 using webapi.healthclinic.manha.Interfaces;
 using webapi.healthclinic.manha.Repositories;
@@ -10,36 +9,36 @@ namespace webapi.healthclinic.manha.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ClinicaController : ControllerBase
+    public class PacienteController : ControllerBase
     {
-        private readonly IClinica _clinicaRepository;
+        private readonly IPaciente _pacienteRepository;
 
-        public ClinicaController()
+        public PacienteController()
         {
-            _clinicaRepository = new ClinicaRepository();
+            _pacienteRepository = new PacienteRepository();
         }
 
         [HttpPost]
-        public IActionResult Post(Clinica clinica)
+        public IActionResult Post(Paciente paciente)
         {
             try
             {
-                _clinicaRepository.Cadastrar(clinica);
-                return StatusCode(201, "Clinica criada");
+                _pacienteRepository.Cadastrar(paciente);
+
+                return StatusCode(201, "Paciente cadastrado com sucesso");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.InnerException);
-                return BadRequest(ex.Message); // Status 400: Requisição inválida
+                return BadRequest($"{ex.Message}"); // Status 400: Requisição inválida
             }
         }
 
         [HttpGet]
         public IActionResult Get()
-        {
+        {   
             try
             {
-                return Ok(_clinicaRepository.ListarTodos());
+                return Ok(_pacienteRepository.ListarTodos()); // Status 200: OK
             }
             catch (Exception ex)
             {
@@ -52,7 +51,7 @@ namespace webapi.healthclinic.manha.Controllers
         {
             try
             {
-                return Ok(_clinicaRepository.BuscarPorId(id));
+                return Ok(_pacienteRepository.BuscarPorId(id));
             }
             catch (Exception ex)
             {
@@ -65,9 +64,23 @@ namespace webapi.healthclinic.manha.Controllers
         {
             try
             {
-                _clinicaRepository.Deletar(id);
-
+                _pacienteRepository.Deletar(id);
                 return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"{ex.Message}"); // Status 400: Requisição inválida
+            }
+        }
+
+        [HttpPatch]
+        public IActionResult Patch(Guid id, Paciente paciente)
+        {
+            try
+            {
+                _pacienteRepository.Atualizar(id, paciente);
+
+                return Ok("Paciente Atualizado");
             }
             catch (Exception ex)
             {
