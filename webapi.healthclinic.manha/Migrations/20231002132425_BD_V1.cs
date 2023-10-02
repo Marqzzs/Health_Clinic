@@ -135,9 +135,9 @@ namespace webapi.healthclinic.manha.Migrations
                     IdConsulta = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Descricao = table.Column<string>(type: "VARCHAR(500)", nullable: false),
                     DataConsulta = table.Column<DateTime>(type: "DATE", nullable: false),
+                    HorarioConsulta = table.Column<TimeSpan>(type: "TIME", nullable: false),
                     IdMedico = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdPresencaConsulta = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -308,8 +308,7 @@ namespace webapi.healthclinic.manha.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_PresencaConsulta_IdConsulta",
                 table: "PresencaConsulta",
-                column: "IdConsulta",
-                unique: true);
+                column: "IdConsulta");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PresencaConsulta_IdPaciente",

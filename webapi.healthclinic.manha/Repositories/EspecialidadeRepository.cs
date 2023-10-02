@@ -66,7 +66,7 @@ namespace webapi.healthclinic.manha.Repositories
         /// <param name="id">O ID da especialidade a ser deletada.</param>
         public void Deletar(Guid id)
         {
-            Especialidade especialidadeBuscada = ctx.Especialidade.Find(id)!;
+            Especialidade especialidadeBuscada = ctx.Especialidade!.Find(id)!;
 
             ctx.Especialidade.Remove(especialidadeBuscada);
 
@@ -79,7 +79,7 @@ namespace webapi.healthclinic.manha.Repositories
         /// <returns>Uma lista de todas as especialidades no banco de dados.</returns>
         public List<Especialidade> ListarTodos()
         {
-            return ctx.Especialidade.ToList();
+            return ctx.Especialidade!.ToList();
         }
     }
 }

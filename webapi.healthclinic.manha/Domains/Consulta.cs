@@ -19,6 +19,12 @@ namespace webapi.healthclinic.manha.Domains
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? DataConsulta { get; set; }
 
+        [Required(ErrorMessage = "Horario da consulta e obrigatorio.")]
+        [Column(TypeName = "TIME")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm:ss")]
+        public TimeSpan? HorarioConsulta { get; set; }
+
         //referencia a tabela medico
         [Required(ErrorMessage ="Informe o medico")]
         public Guid IdMedico { get; set; }
@@ -32,10 +38,5 @@ namespace webapi.healthclinic.manha.Domains
 
         [ForeignKey(nameof(IdPaciente))]
         public Paciente? Paciente { get; set; }
-
-        //referencia a tabela presenca consulta
-        public Guid IdPresencaConsulta { get; set; }
-
-        public PresencaConsulta? PresencaConsulta { get; set; }
     }
 }

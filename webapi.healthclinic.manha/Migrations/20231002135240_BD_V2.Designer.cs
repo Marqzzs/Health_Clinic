@@ -12,8 +12,8 @@ using webapi.healthclinic.manha.HealtClinicContext;
 namespace webapi.healthclinic.manha.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20230929131011_BD_V1")]
-    partial class BD_V1
+    [Migration("20231002135240_BD_V2")]
+    partial class BD_V2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,13 +102,14 @@ namespace webapi.healthclinic.manha.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(500)");
 
+                    b.Property<TimeSpan?>("HorarioConsulta")
+                        .IsRequired()
+                        .HasColumnType("TIME");
+
                     b.Property<Guid>("IdMedico")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("IdPaciente")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdPresencaConsulta")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("IdConsulta");
@@ -156,6 +157,9 @@ namespace webapi.healthclinic.manha.Migrations
 
                     b.Property<Guid>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("VARCHAR(100)");
 
                     b.HasKey("IdMedico");
 
@@ -222,8 +226,7 @@ namespace webapi.healthclinic.manha.Migrations
 
                     b.HasKey("IdPresencaConsulta");
 
-                    b.HasIndex("IdConsulta")
-                        .IsUnique();
+                    b.HasIndex("IdConsulta");
 
                     b.HasIndex("IdPaciente");
 
@@ -389,8 +392,8 @@ namespace webapi.healthclinic.manha.Migrations
             modelBuilder.Entity("webapi.healthclinic.manha.Domains.PresencaConsulta", b =>
                 {
                     b.HasOne("webapi.healthclinic.manha.Domains.Consulta", "Consulta")
-                        .WithOne("PresencaConsulta")
-                        .HasForeignKey("webapi.healthclinic.manha.Domains.PresencaConsulta", "IdConsulta")
+                        .WithMany()
+                        .HasForeignKey("IdConsulta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -441,11 +444,6 @@ namespace webapi.healthclinic.manha.Migrations
                         .IsRequired();
 
                     b.Navigation("Tipo");
-                });
-
-            modelBuilder.Entity("webapi.healthclinic.manha.Domains.Consulta", b =>
-                {
-                    b.Navigation("PresencaConsulta");
                 });
 #pragma warning restore 612, 618
         }

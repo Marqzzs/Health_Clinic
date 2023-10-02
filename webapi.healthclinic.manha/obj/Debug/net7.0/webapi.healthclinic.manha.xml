@@ -4,6 +4,41 @@
         <name>webapi.healthclinic.manha</name>
     </assembly>
     <members>
+        <member name="M:webapi.healthclinic.manha.Controllers.ClinicaController.Post(webapi.healthclinic.manha.Domains.Clinica)">
+            <summary>
+            Cria uma nova clínica.
+            </summary>
+            <param name="clinica">Os dados da clínica a serem cadastrados.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ClinicaController.Get">
+            <summary>
+            Obtém uma lista de todas as clínicas.
+            </summary>
+            <returns>Uma resposta HTTP contendo a lista de clínicas.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ClinicaController.GetById(System.Guid)">
+            <summary>
+            Obtém uma clínica pelo seu ID.
+            </summary>
+            <param name="id">O ID da clínica a ser buscado.</param>
+            <returns>Uma resposta HTTP contendo os detalhes da clínica encontrada.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ClinicaController.Delete(System.Guid)">
+            <summary>
+            Exclui uma clínica pelo seu ID.
+            </summary>
+            <param name="id">O ID da clínica a ser excluída.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ClinicaController.Patch(System.Guid,webapi.healthclinic.manha.Domains.Clinica)">
+            <summary>
+            Atualiza uma clínica pelo seu ID.
+            </summary>
+            <param name="id">O ID da clínica a ser atualizada.</param>
+            <param name="clinica">Os novos dados da clínica.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
         <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.Post(webapi.healthclinic.manha.Domains.Especialidade)">
             <summary>
             Cadastra uma nova especialidade.
@@ -45,6 +80,83 @@
             </summary>
             <param name="usuario">Os dados de login do usuário.</param>
             <returns>Um objeto JSON contendo o token JWT.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.MedicoController.Post(webapi.healthclinic.manha.Domains.Medico)">
+            <summary>
+            Cadastra um novo médico.
+            </summary>
+            <param name="medico">Os dados do médico a serem cadastrados.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.MedicoController.Get">
+            <summary>
+            Obtém uma lista de todos os médicos cadastrados.
+            </summary>
+            <returns>Uma resposta HTTP contendo a lista de médicos.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.MedicoController.GetById(System.Guid)">
+            <summary>
+            Obtém um médico pelo seu ID.
+            </summary>
+            <param name="id">O ID do médico a ser buscado.</param>
+            <returns>Uma resposta HTTP contendo os detalhes do médico encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.MedicoController.ListarComEspecialdade(System.Guid)">
+            <summary>
+            Lista os medicos com base no id da especialidade
+            </summary>
+            <param name="id">id da especialidade</param>
+            <returns>Retorna os medicos com base na especialidade</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.MedicoController.Delete(System.Guid)">
+            <summary>
+            Exclui um médico pelo seu ID.
+            </summary>
+            <param name="id">O ID do médico a ser excluído.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.MedicoController.Patch(System.Guid,webapi.healthclinic.manha.Domains.Medico)">
+            <summary>
+            Atualiza um médico pelo seu ID.
+            </summary>
+            <param name="id">O ID do médico a ser atualizado.</param>
+            <param name="medico">Os novos dados do médico.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PacienteController.Post(webapi.healthclinic.manha.Domains.Paciente)">
+            <summary>
+            Cadastra um novo paciente.
+            </summary>
+            <param name="paciente">Os dados do paciente a serem cadastrados.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PacienteController.Get">
+            <summary>
+            Obtém uma lista de todos os pacientes cadastrados.
+            </summary>
+            <returns>Uma resposta HTTP contendo a lista de pacientes.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PacienteController.GetById(System.Guid)">
+            <summary>
+            Obtém um paciente pelo seu ID.
+            </summary>
+            <param name="id">O ID do paciente a ser buscado.</param>
+            <returns>Uma resposta HTTP contendo os detalhes do paciente encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PacienteController.Delete(System.Guid)">
+            <summary>
+            Exclui um paciente pelo seu ID.
+            </summary>
+            <param name="id">O ID do paciente a ser excluído.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PacienteController.Patch(System.Guid,webapi.healthclinic.manha.Domains.Paciente)">
+            <summary>
+            Atualiza um paciente pelo seu ID.
+            </summary>
+            <param name="id">O ID do paciente a ser atualizado.</param>
+            <param name="paciente">Os novos dados do paciente.</param>
+            <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
         </member>
         <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.Post(webapi.healthclinic.manha.Domains.TipoUsuario)">
             <summary>
@@ -115,6 +227,50 @@
         <member name="M:webapi.healthclinic.manha.Migrations.BD_V1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:webapi.healthclinic.manha.Migrations.BD_V2">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Migrations.BD_V2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ClinicaRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Clinica)">
+            <summary>
+            Atualiza os dados de uma clínica pelo seu ID.
+            </summary>
+            <param name="id">O ID da clínica a ser atualizada.</param>
+            <param name="clinica">Os novos dados da clínica.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ClinicaRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca uma clínica pelo seu ID.
+            </summary>
+            <param name="id">O ID da clínica a ser buscada.</param>
+            <returns>A clínica encontrada.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ClinicaRepository.Cadastrar(webapi.healthclinic.manha.Domains.Clinica)">
+            <summary>
+            Cadastra uma nova clínica.
+            </summary>
+            <param name="clinica">Os dados da clínica a serem cadastrados.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ClinicaRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta uma clínica pelo seu ID.
+            </summary>
+            <param name="id">O ID da clínica a ser deletada.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ClinicaRepository.ListarTodos">
+            <summary>
+            Lista todas as clínicas cadastradas.
+            </summary>
+            <returns>Uma lista de todas as clínicas.</returns>
+        </member>
         <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Especialidade)">
             <summary>
             Atualiza uma especialidade pelo seu ID.
@@ -146,6 +302,70 @@
             Lista todas as especialidades cadastradas.
             </summary>
             <returns>Uma lista de todas as especialidades no banco de dados.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.MedicoRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Medico)">
+            <summary>
+            Atualiza os dados de um médico pelo seu ID.
+            </summary>
+            <param name="id">O ID do médico a ser atualizado.</param>
+            <param name="medico">Os novos dados do médico.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.MedicoRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca um médico pelo seu ID.
+            </summary>
+            <param name="id">O ID do médico a ser buscado.</param>
+            <returns>O médico encontrado ou null se não encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.MedicoRepository.Cadastrar(webapi.healthclinic.manha.Domains.Medico)">
+            <summary>
+            Cadastra um novo médico.
+            </summary>
+            <param name="medico">Os dados do médico a serem cadastrados.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.MedicoRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta um médico pelo seu ID.
+            </summary>
+            <param name="id">O ID do médico a ser deletado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.MedicoRepository.ListarTodos">
+            <summary>
+            Lista todos os médicos cadastrados.
+            </summary>
+            <returns>Uma lista de todos os médicos.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PacienteRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Paciente)">
+            <summary>
+            Atualiza os dados de um paciente pelo seu ID.
+            </summary>
+            <param name="id">O ID do paciente a ser atualizado.</param>
+            <param name="paciente">Os novos dados do paciente.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PacienteRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca um paciente pelo seu ID.
+            </summary>
+            <param name="id">O ID do paciente a ser buscado.</param>
+            <returns>O paciente encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PacienteRepository.Cadastrar(webapi.healthclinic.manha.Domains.Paciente)">
+            <summary>
+            Cadastra um novo paciente.
+            </summary>
+            <param name="paciente">Os dados do paciente a serem cadastrados.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PacienteRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta um paciente pelo seu ID.
+            </summary>
+            <param name="id">O ID do paciente a ser deletado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PacienteRepository.ListarTodos">
+            <summary>
+            Lista todos os pacientes cadastrados.
+            </summary>
+            <returns>Uma lista de todos os pacientes.</returns>
         </member>
         <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.TipoUsuario)">
             <summary>

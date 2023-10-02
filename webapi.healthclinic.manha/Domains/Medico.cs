@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
 
 namespace webapi.healthclinic.manha.Domains
 {
@@ -10,6 +11,9 @@ namespace webapi.healthclinic.manha.Domains
     {
         [Key]
         public Guid IdMedico { get; set; }
+
+        [Column(TypeName ="VARCHAR(100)")]
+        public string? Nome { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "CRM do medico e obrigatorio")]
