@@ -78,6 +78,7 @@ namespace webapi.healthclinic.manha.Migrations
                 columns: table => new
                 {
                     IdMedico = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Nome = table.Column<string>(type: "VARCHAR(100)", nullable: true),
                     CRM = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdEspecialidade = table.Column<Guid>(type: "uniqueidentifier", nullable: false),

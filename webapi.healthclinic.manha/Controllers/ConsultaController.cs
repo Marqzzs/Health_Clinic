@@ -18,13 +18,17 @@ namespace webapi.healthclinic.manha.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        /// <summary>
+        /// Agenda uma nova consulta.
+        /// </summary>
+        /// <param name="consulta">Os dados da consulta a ser agendada.</param>
+        /// <returns>Um código de status 201 (Criado) se a consulta for agendada com sucesso.</returns>
         [HttpPost]
         public IActionResult Post(Consulta consulta)
         {
             try
             {
                 _consultaRepository.Cadastrar(consulta);
-
                 return StatusCode(201, "Consulta agendada");
             }
             catch (Exception ex)
@@ -34,6 +38,10 @@ namespace webapi.healthclinic.manha.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista todas as consultas cadastradas.
+        /// </summary>
+        /// <returns>Uma lista de todas as consultas cadastradas.</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -48,6 +56,11 @@ namespace webapi.healthclinic.manha.Controllers
             }
         }
 
+        /// <summary>
+        /// Busca uma consulta por seu ID.
+        /// </summary>
+        /// <param name="id">O ID da consulta a ser buscada.</param>
+        /// <returns>O objeto Consulta encontrado ou um código de status 404 (Não Encontrado) se não encontrado.</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -62,6 +75,11 @@ namespace webapi.healthclinic.manha.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista todas as consultas associadas a um paciente com base em seu ID.
+        /// </summary>
+        /// <param name="id">O ID do paciente para o qual as consultas serão listadas.</param>
+        /// <returns>Uma lista de objetos Consulta associados ao paciente.</returns>
         [HttpGet("comPaciente")]
         public IActionResult ListarComPaciente(Guid id)
         {
@@ -76,6 +94,11 @@ namespace webapi.healthclinic.manha.Controllers
             }
         }
 
+        /// <summary>
+        /// Cancela uma consulta com base em seu ID.
+        /// </summary>
+        /// <param name="id">O ID da consulta a ser cancelada.</param>
+        /// <returns>Um código de status 404 (Não Encontrado) se a consulta for cancelada com sucesso.</returns>
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {
@@ -91,13 +114,18 @@ namespace webapi.healthclinic.manha.Controllers
             }
         }
 
+        /// <summary>
+        /// Reagenda uma consulta com base em seu ID.
+        /// </summary>
+        /// <param name="id">O ID da consulta a ser reagendada.</param>
+        /// <param name="consulta">Os novos dados da consulta reagendada.</param>
+        /// <returns>Um código de status 200 (OK) se a consulta for reagendada com sucesso.</returns>
         [HttpPatch]
         public IActionResult Patch(Guid id, Consulta consulta)
         {
             try
             {
                 _consultaRepository.Atualizar(id, consulta);
-
                 return Ok("Consulta reagendada");
             }
             catch (Exception ex)

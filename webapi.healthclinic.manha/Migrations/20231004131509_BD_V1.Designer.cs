@@ -12,7 +12,7 @@ using webapi.healthclinic.manha.HealtClinicContext;
 namespace webapi.healthclinic.manha.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20231002132425_BD_V1")]
+    [Migration("20231004131509_BD_V1")]
     partial class BD_V1
     {
         /// <inheritdoc />
@@ -157,6 +157,9 @@ namespace webapi.healthclinic.manha.Migrations
 
                     b.Property<Guid>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("VARCHAR(100)");
 
                     b.HasKey("IdMedico");
 

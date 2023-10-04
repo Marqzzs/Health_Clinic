@@ -53,9 +53,8 @@ namespace webapi.healthclinic.manha.Repositories
         /// <param name="clinica">Os dados da clínica a serem cadastrados.</param>
         public void Cadastrar(Clinica clinica)
         {
-            clinica.IdClinica = Guid.NewGuid();
 
-            ctx.Clinica!.Add(clinica);
+            ctx.Clinica.Add(clinica);
 
             ctx.SaveChanges();
         }

@@ -10,19 +10,13 @@ namespace webapi.healthclinic.manha.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Nome",
-                table: "Medico",
-                type: "VARCHAR(100)",
-                nullable: true);
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Nome",
-                table: "Medico");
+
         }
     }
 }

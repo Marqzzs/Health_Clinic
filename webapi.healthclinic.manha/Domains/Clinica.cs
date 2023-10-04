@@ -11,7 +11,7 @@ namespace webapi.healthclinic.manha.Domains
     public class Clinica
     {
         [Key]
-        public Guid IdClinica { get; set; }
+        public Guid IdClinica { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "Razao social obrigatória!")]

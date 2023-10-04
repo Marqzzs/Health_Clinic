@@ -39,6 +39,69 @@
             <param name="clinica">Os novos dados da clínica.</param>
             <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
         </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ComentarioController.Post(webapi.healthclinic.manha.Domains.Comentario)">
+            <summary>
+            Endpoint para criar um novo comentário.
+            </summary>
+            <param name="comentario">O objeto Comentario a ser criado.</param>
+            <returns>Um código de status 201 (Created) se o comentário for criado com sucesso.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ComentarioController.Get(System.Guid)">
+            <summary>
+            Endpoint para listar comentários associados a um paciente com base em seu ID.
+            </summary>
+            <param name="id">O ID do paciente para o qual os comentários serão listados.</param>
+            <returns>Uma resposta HTTP contendo uma lista de objetos Comentario associados ao paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ComentarioController.Delete(System.Guid)">
+            <summary>
+            Endpoint para excluir um comentário com base em seu ID.
+            </summary>
+            <param name="id">O ID do comentário a ser excluído.</param>
+            <returns>Um código de status 404 (Not Found) se o comentário for excluído com sucesso.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ConsultaController.Post(webapi.healthclinic.manha.Domains.Consulta)">
+            <summary>
+            Agenda uma nova consulta.
+            </summary>
+            <param name="consulta">Os dados da consulta a ser agendada.</param>
+            <returns>Um código de status 201 (Criado) se a consulta for agendada com sucesso.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ConsultaController.Get">
+            <summary>
+            Lista todas as consultas cadastradas.
+            </summary>
+            <returns>Uma lista de todas as consultas cadastradas.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ConsultaController.GetById(System.Guid)">
+            <summary>
+            Busca uma consulta por seu ID.
+            </summary>
+            <param name="id">O ID da consulta a ser buscada.</param>
+            <returns>O objeto Consulta encontrado ou um código de status 404 (Não Encontrado) se não encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ConsultaController.ListarComPaciente(System.Guid)">
+            <summary>
+            Lista todas as consultas associadas a um paciente com base em seu ID.
+            </summary>
+            <param name="id">O ID do paciente para o qual as consultas serão listadas.</param>
+            <returns>Uma lista de objetos Consulta associados ao paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ConsultaController.Delete(System.Guid)">
+            <summary>
+            Cancela uma consulta com base em seu ID.
+            </summary>
+            <param name="id">O ID da consulta a ser cancelada.</param>
+            <returns>Um código de status 404 (Não Encontrado) se a consulta for cancelada com sucesso.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ConsultaController.Patch(System.Guid,webapi.healthclinic.manha.Domains.Consulta)">
+            <summary>
+            Reagenda uma consulta com base em seu ID.
+            </summary>
+            <param name="id">O ID da consulta a ser reagendada.</param>
+            <param name="consulta">Os novos dados da consulta reagendada.</param>
+            <returns>Um código de status 200 (OK) se a consulta for reagendada com sucesso.</returns>
+        </member>
         <member name="M:webapi.healthclinic.manha.Controllers.EspecialidadeController.Post(webapi.healthclinic.manha.Domains.Especialidade)">
             <summary>
             Cadastra uma nova especialidade.
@@ -158,6 +221,64 @@
             <param name="paciente">Os novos dados do paciente.</param>
             <returns>Uma resposta HTTP indicando o resultado da operação.</returns>
         </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PresencaConsultaController.Post(System.Guid,System.Guid)">
+            <summary>
+            Registra a participação de um paciente em uma consulta.
+            </summary>
+            <param name="idConsulta">O ID da consulta.</param>
+            <param name="idPaciente">O ID do paciente.</param>
+            <returns>Um IActionResult indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PresencaConsultaController.Get(System.Guid)">
+            <summary>
+            Lista todas as presenças de um paciente com base no seu ID.
+            </summary>
+            <param name="id">O ID do paciente.</param>
+            <returns>Um IActionResult contendo a lista de presenças do paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.PresencaConsultaController.Delete(System.Guid,System.Guid)">
+            <summary>
+            Cancela a participação de um paciente em um evento.
+            </summary>
+            <param name="idEvento">O ID do evento.</param>
+            <param name="idUsuario">O ID do usuário (paciente).</param>
+            <returns>Um IActionResult indicando o resultado da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ProntuarioController.Post(webapi.healthclinic.manha.Domains.Prontuario)">
+            <summary>
+            Cadastra um novo prontuário no sistema.
+            </summary>
+            <param name="prontuario">O objeto Prontuario a ser cadastrado.</param>
+            <returns>O status da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ProntuarioController.Get">
+            <summary>
+            Retorna todos os prontuários cadastrados no sistema.
+            </summary>
+            <returns>Uma lista de prontuários.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ProntuarioController.GetByPaciente(System.Guid)">
+            <summary>
+            Retorna os prontuários de um paciente com base no ID do paciente.
+            </summary>
+            <param name="id">O ID do paciente.</param>
+            <returns>Uma lista de prontuários do paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ProntuarioController.Delete(System.Guid)">
+            <summary>
+            Deleta um prontuário com base no seu ID.
+            </summary>
+            <param name="id">O ID do prontuário a ser deletado.</param>
+            <returns>O status da operação.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Controllers.ProntuarioController.Patch(System.Guid,webapi.healthclinic.manha.Domains.Prontuario)">
+            <summary>
+            Atualiza as informações de um prontuário com base no seu ID.
+            </summary>
+            <param name="id">O ID do prontuário a ser atualizado.</param>
+            <param name="prontuario">O objeto Prontuario contendo as novas informações.</param>
+            <returns>O status da operação.</returns>
+        </member>
         <member name="M:webapi.healthclinic.manha.Controllers.TipoUsuarioController.Post(webapi.healthclinic.manha.Domains.TipoUsuario)">
             <summary>
             Cadastra um novo tipo de usuário.
@@ -271,6 +392,64 @@
             </summary>
             <returns>Uma lista de todas as clínicas.</returns>
         </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ComentarioRepository.Comentar(webapi.healthclinic.manha.Domains.Comentario)">
+            <summary>
+            Adiciona um novo comentário ao contexto do banco de dados.
+            </summary>
+            <param name="comentario">O objeto Comentario a ser adicionado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ComentarioRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta um comentário com base em seu ID.
+            </summary>
+            <param name="id">O ID do comentário a ser deletado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ComentarioRepository.ListarPorPaciente(System.Guid)">
+            <summary>
+            Lista todos os comentários associados a um paciente com base em seu ID.
+            </summary>
+            <param name="id">O ID do paciente para o qual os comentários serão listados.</param>
+            <returns>Uma lista de objetos Comentario associados ao paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ConsultaRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Consulta)">
+            <summary>
+            Atualiza uma consulta com base em seu ID.
+            </summary>
+            <param name="id">O ID da consulta a ser atualizada.</param>
+            <param name="consulta">Os dados da consulta a serem atualizados.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ConsultaRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Busca uma consulta por seu ID.
+            </summary>
+            <param name="id">O ID da consulta a ser buscada.</param>
+            <returns>O objeto Consulta encontrado ou nulo se não encontrado.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ConsultaRepository.Cadastrar(webapi.healthclinic.manha.Domains.Consulta)">
+            <summary>
+            Cadastra uma nova consulta.
+            </summary>
+            <param name="consulta">O objeto Consulta a ser cadastrado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ConsultaRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta uma consulta com base em seu ID.
+            </summary>
+            <param name="id">O ID da consulta a ser deletada.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ConsultaRepository.ListarComPaciente(System.Guid)">
+            <summary>
+            Lista todas as consultas associadas a um paciente com base em seu ID.
+            </summary>
+            <param name="id">O ID do paciente para o qual as consultas serão listadas.</param>
+            <returns>Uma lista de objetos Consulta associados ao paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ConsultaRepository.ListarTodos">
+            <summary>
+            Lista todas as consultas cadastradas.
+            </summary>
+            <returns>Uma lista de todas as consultas cadastradas.</returns>
+        </member>
         <member name="M:webapi.healthclinic.manha.Repositories.EspecialidadeRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Especialidade)">
             <summary>
             Atualiza uma especialidade pelo seu ID.
@@ -366,6 +545,59 @@
             Lista todos os pacientes cadastrados.
             </summary>
             <returns>Uma lista de todos os pacientes.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PresencaConsultaRepository.CancelarParticipacao(System.Guid,System.Guid)">
+            <summary>
+            Cancela a participação de um paciente em uma consulta.
+            </summary>
+            <param name="consultaId">O ID da consulta.</param>
+            <param name="pacienteId">O ID do paciente.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PresencaConsultaRepository.ListarPresencas(System.Guid)">
+            <summary>
+            Lista todas as presenças de um paciente com base no ID do paciente.
+            </summary>
+            <param name="id">O ID do paciente.</param>
+            <returns>Uma lista de objetos PresencaConsulta associados ao paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.PresencaConsultaRepository.ParticiparConsulta(System.Guid,System.Guid)">
+            <summary>
+            Registra a participação de um paciente em uma consulta.
+            </summary>
+            <param name="consultaId">O ID da consulta.</param>
+            <param name="pacienteId">O ID do paciente.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ProntuarioRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.Prontuario)">
+            <summary>
+            Atualiza as informações de um prontuário com base no seu ID.
+            </summary>
+            <param name="id">O ID do prontuário a ser atualizado.</param>
+            <param name="prontuario">O objeto Prontuario contendo as novas informações.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ProntuarioRepository.CadastrarProntuario(webapi.healthclinic.manha.Domains.Prontuario)">
+            <summary>
+            Cadastra um novo prontuário no sistema.
+            </summary>
+            <param name="prontuario">O objeto Prontuario a ser cadastrado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ProntuarioRepository.Deletar(System.Guid)">
+            <summary>
+            Deleta um prontuário com base no seu ID.
+            </summary>
+            <param name="id">O ID do prontuário a ser deletado.</param>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ProntuarioRepository.ListarPorPaciente(System.Guid)">
+            <summary>
+            Lista todos os prontuários de um paciente com base no ID do paciente.
+            </summary>
+            <param name="idPaciente">O ID do paciente.</param>
+            <returns>Uma lista de Prontuario contendo os prontuários do paciente.</returns>
+        </member>
+        <member name="M:webapi.healthclinic.manha.Repositories.ProntuarioRepository.ListarTodos">
+            <summary>
+            Lista todos os prontuários cadastrados no sistema.
+            </summary>
+            <returns>Uma lista de Prontuario contendo todos os prontuários cadastrados.</returns>
         </member>
         <member name="M:webapi.healthclinic.manha.Repositories.TipoUsuarioRepository.Atualizar(System.Guid,webapi.healthclinic.manha.Domains.TipoUsuario)">
             <summary>

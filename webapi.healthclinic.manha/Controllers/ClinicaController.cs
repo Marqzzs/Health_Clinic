@@ -31,7 +31,7 @@ namespace webapi.healthclinic.manha.Controllers
             try
             {
                 _clinicaRepository.Cadastrar(clinica);
-                return StatusCode(201, "Clinica criada"); // Status 201: Criado
+                return Ok(); // Status 201: Criado
             }
             catch (Exception ex)
             {

@@ -12,7 +12,7 @@ using webapi.healthclinic.manha.HealtClinicContext;
 namespace webapi.healthclinic.manha.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20231002135240_BD_V2")]
+    [Migration("20231004132042_BD_V2")]
     partial class BD_V2
     {
         /// <inheritdoc />
