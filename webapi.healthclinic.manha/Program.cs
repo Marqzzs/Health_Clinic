@@ -6,19 +6,15 @@ using webapi.healthclinic.manha.Uteis;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services
-    .AddControllers()
-        .AddNewtonsoftJson(options =>
-        {
-            // Ignora os loopings nas consultas
-            options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            // Ignora valores nulos ao fazer junções nas consultas
-            options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-        }
-    );
+//jwt
 
-//Adiciona serviço de Jwt Bearer (forma de autenticação)
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultChallengeScheme = "JwtBearer";
@@ -106,18 +102,6 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("CorsPolicy",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        });
-});
-
 var app = builder.Build();
 
 //Habilite o middleware para atender ao documento JSON gerado e à interface do usuário do Swagger
@@ -142,10 +126,6 @@ app.UseSwaggerUI(options =>
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     options.RoutePrefix = string.Empty;
 });
-
-app.UseRouting();
-
-app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 

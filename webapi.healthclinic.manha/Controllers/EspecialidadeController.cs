@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi.healthclinic.manha.Domains;
 using webapi.healthclinic.manha.Interfaces;
@@ -24,6 +25,7 @@ namespace webapi.healthclinic.manha.Controllers
         /// <param name="especialidade">Os dados da especialidade a ser cadastrada.</param>
         /// <returns>Um código de status 201 (Created) se a especialidade for cadastrada com sucesso, ou 400 (Bad Request) em caso de erro.</returns>
         [HttpPost]
+        [Authorize(Roles ="Administrador")]
         public IActionResult Post(Especialidade especialidade)
         {
             try
